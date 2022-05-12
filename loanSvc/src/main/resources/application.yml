@@ -1,0 +1,31 @@
+server:
+  port: 8082
+spring:
+  datasource:
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    password: Sa@12345
+    url: 'jdbc:sqlserver://MGSCHN-LAP-195;databaseName=MicroServicesDb'
+    username: sa
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServer2012Dialect
+        format_sql: true
+    show-sql: true
+  application:
+    name: accounts
+  profiles:
+    active:
+      - prod
+  config:
+    import:
+    - configserver:http://localhost:8084
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - =*
