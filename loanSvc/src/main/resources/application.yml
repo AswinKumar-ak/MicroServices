@@ -16,7 +16,7 @@ spring:
         format_sql: true
     show-sql: true
   application:
-    name: accounts
+    name: Loans
   profiles:
     active:
       - prod
@@ -27,5 +27,26 @@ management:
   endpoints:
     web:
       exposure:
-        include:
-        - =*
+        include: '*'
+    shutdown:
+      enabled: true
+  info:
+    env:
+      enabled: true
+      
+endpoints:
+  shutdown:
+    enabled: true
+eureka:
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8085/eureka/
+  instance:
+    preferIpAddress: true 
+info:
+  app:
+    description: ARK Bank Accounts Application
+    name: Loans Microservice
+    version: 1.0.0
