@@ -15,12 +15,13 @@ import lombok.Data;
 public class Customer {
 	private int customerId;
 
-	private long accounNumber;
-
-	private String accountType;
-
-	private String branchAddress;
-
-	private LocalDate createDt;
-
+	/*
+	 * private long accounNumber;
+	 * 
+	 * private String accountType;
+	 * 
+	 * private String branchAddress;
+	 * 
+	 * private LocalDate createDt;
+	 */
 }

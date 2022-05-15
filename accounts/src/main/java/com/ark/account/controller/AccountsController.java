@@ -4,7 +4,6 @@
 package com.ark.account.controller;
 
 import java.util.List;
-import java.util.Properties;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +16,11 @@ import com.ark.account.config.AccountsProperties;
 import com.ark.account.model.Accounts;
 import com.ark.account.repository.AccountsRepository;
 import com.ark.accounts.dto.Customer;
+import com.ark.accounts.dto.CustomerDetails;
+import com.ark.accounts.service.client.CardsFeignClient;
+import com.ark.accounts.service.client.LoansFeignClient;
+import com.ark.cards.model.Cards;
+import com.ark.loans.learn.Model.Loans;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -32,6 +36,12 @@ public class AccountsController {
 
 	@Autowired
 	AccountsConfig accountsConfig;
+	
+	@Autowired
+	LoansFeignClient loansFeignClient;
+	
+	@Autowired
+	CardsFeignClient cardsFeignClient;
 
 	@PostMapping("/myAccount")
 	public List<Accounts> getAccountsDetails(@RequestBody Customer customer) {
@@ -51,5 +61,16 @@ public class AccountsController {
 				accountsConfig.getMailDetails(), accountsConfig.getActiveBranches());
 		String json = objectWriter.writeValueAsString(properties);
 		return json;
+	}
+	@PostMapping("/myCustomerDeatils")
+	public CustomerDetails myCustomerDeatils(@RequestBody Customer customer ) {
+		List<Accounts> accounts = accountsRepository.findByCustomerId(customer.getCustomerId());
+		List<Loans> loans = loansFeignClient.getLoansDetails(customer);
+		List<Cards> cards = cardsFeignClient.getCardsDetails(customer);
+		CustomerDetails customerDetails = new CustomerDetails();
+		customerDetails.setAccounts(accounts);
+		customerDetails.setLoans(loans);
+		customerDetails.setCards(cards);
+		return customerDetails;
 	}
 }
