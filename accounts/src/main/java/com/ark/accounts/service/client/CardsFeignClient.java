@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.ark.accounts.dto.Cards;
 import com.ark.accounts.dto.Customer;
-import com.ark.cards.model.Cards;
 
 @FeignClient("Cards")
 public interface CardsFeignClient {

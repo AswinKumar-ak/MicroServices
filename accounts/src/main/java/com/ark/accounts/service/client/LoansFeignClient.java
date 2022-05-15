@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.ark.accounts.dto.Customer;
-import com.ark.loans.learn.Model.Loans;
+import com.ark.accounts.dto.Loans;
 
 @FeignClient("Loans")
 public interface LoansFeignClient {

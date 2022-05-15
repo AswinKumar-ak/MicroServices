@@ -65,8 +65,8 @@ public class AccountsController {
 	@PostMapping("/myCustomerDeatils")
 	public CustomerDetails myCustomerDeatils(@RequestBody Customer customer ) {
 		List<Accounts> accounts = accountsRepository.findByCustomerId(customer.getCustomerId());
-		List<Loans> loans = loansFeignClient.getLoansDetails(customer);
-		List<Cards> cards = cardsFeignClient.getCardsDetails(customer);
+		List<com.ark.accounts.dto.Loans> loans = loansFeignClient.getLoansDetails(customer);
+		List<com.ark.accounts.dto.Cards> cards = cardsFeignClient.getCardsDetails(customer);
 		CustomerDetails customerDetails = new CustomerDetails();
 		customerDetails.setAccounts(accounts);
 		customerDetails.setLoans(loans);
