@@ -1,4 +1,4 @@
-package com.ark.loans.learn.loanSvc;
+package com.ark.loanSvc;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

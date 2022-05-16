@@ -1,4 +1,4 @@
-package com.ark.cards.cardsSvc;
+package com.ark.cardsSvc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,9 +9,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @RefreshScope
-@ComponentScan("com.ark.cards")
-@EnableJpaRepositories("com.ark.cards.repository")
-@EntityScan("com.ark.cards.model")
+@ComponentScan("com.ark")
+@EnableJpaRepositories("com.ark.repository")
+@EntityScan("com.ark.model")
 public class CardsSvcApplication {
 
 	public static void main(String[] args) {

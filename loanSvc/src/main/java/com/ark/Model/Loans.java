@@ -1,4 +1,4 @@
-package com.ark.loans.learn.Model;
+package com.ark.Model;
 
 
 import java.util.Date;

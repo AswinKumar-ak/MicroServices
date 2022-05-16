@@ -1,4 +1,4 @@
-package com.ark.loans.learn.config;
+package com.ark.config;
 
 import java.util.List;
 import java.util.Map;

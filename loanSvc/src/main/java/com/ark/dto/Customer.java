@@ -1,4 +1,4 @@
-package com.ark.loans.learn.dto;
+package com.ark.dto;
 
 import lombok.Data;
 

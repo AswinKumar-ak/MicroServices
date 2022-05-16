@@ -1,4 +1,4 @@
-package com.ark.loans.learn.loanSvc;
+package com.ark.loanSvc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,9 +9,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @RefreshScope
-@ComponentScan("com.ark.loans.learn")
-@EnableJpaRepositories("com.ark.loans.learn.loanRepo")
-@EntityScan("com.ark.loans.learn.Model")
+@ComponentScan("com.ark")
+@EnableJpaRepositories("com.ark.loanRepo")
+@EntityScan("com.ark.Model")
 public class LoanSvcApplication {
 
 	public static void main(String[] args) {

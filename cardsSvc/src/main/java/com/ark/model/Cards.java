@@ -1,4 +1,4 @@
-package com.ark.cards.model;
+package com.ark.model;
 
 import java.sql.Date;
 

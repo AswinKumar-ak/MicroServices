@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.ark.loans.learn.loanCtrl;
+package com.ark.loanCtrl;
 
 import java.util.List;
 
@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ark.loans.learn.Model.Loans;
-import com.ark.loans.learn.config.LoansConfig;
-import com.ark.loans.learn.config.LoansProperties;
-import com.ark.loans.learn.dto.Customer;
-import com.ark.loans.learn.loanRepo.LoansRepository;
+import com.ark.Model.Loans;
+import com.ark.config.LoansConfig;
+import com.ark.config.LoansProperties;
+import com.ark.dto.Customer;
+import com.ark.loanRepo.LoansRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
