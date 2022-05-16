@@ -1,4 +1,4 @@
-package com.ark.accounts;
+package com.ark.account;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

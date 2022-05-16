@@ -31,10 +31,13 @@ management:
         include: '*'
     shutdown:
       enabled: true
+    health:
+      show-details: always
       
 endpoints:
   shutdown:
     enabled: true
+    
 eureka:
   client:
     fetchRegistry: true
@@ -43,9 +46,35 @@ eureka:
       defaultZone: http://localhost:8085/eureka/
   instance:
     preferIpAddress: true 
+    
 info:
   app:
     description: ARK Bank Accounts Application
     name: Accounts Microservice
     version: 1.0.0
     
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        registerHealthIndicator: true
+    instances:
+      detailsForCustomerSupportApp:
+        failureRateThreshold: 50
+        minimumNumberOfCalls: 5
+        permittedNumberOfCallsInHalfOpenState: 2
+        waitDurationInOpenState: 30000
+  ratelimiter:
+    configs:
+      default:
+        registerHealthIndicator: true
+    instances:
+      sayHello:
+        limitForPeriod: 1
+        limitRefreshPeriod: 5000
+        timeoutDuration: 5000
+  retry:
+    instances:
+      retryForCustomerDetails:
+        maxRetryAttempts: 3
+        waitDuration: 2000

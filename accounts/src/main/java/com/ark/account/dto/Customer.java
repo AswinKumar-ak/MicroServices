@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.ark.accounts.dto;
+package com.ark.account.dto;
 
 import java.time.LocalDate;
 
