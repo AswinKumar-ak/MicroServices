@@ -1,4 +1,4 @@
-package com.ark.account.dto;
+package com.ark.dto;
 
 import java.sql.Date;
 

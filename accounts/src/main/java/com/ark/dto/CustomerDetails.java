@@ -1,8 +1,8 @@
-package com.ark.account.dto;
+package com.ark.dto;
 
 import java.util.List;
 
-import com.ark.account.model.Accounts;
+import com.ark.model.Accounts;
 
 import lombok.Data;
 

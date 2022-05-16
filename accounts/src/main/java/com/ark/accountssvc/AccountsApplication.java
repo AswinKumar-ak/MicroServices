@@ -1,4 +1,4 @@
-package com.ark.account;
+package com.ark.accountssvc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

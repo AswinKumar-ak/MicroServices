@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.ark.account.model;
+package com.ark.model;
 
 import java.time.LocalDate;
 

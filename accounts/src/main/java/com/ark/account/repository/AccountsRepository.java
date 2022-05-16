@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.ark.account.model.Accounts;
+import com.ark.model.Accounts;
 
 @Repository
 public interface AccountsRepository extends CrudRepository<Accounts, Long>{

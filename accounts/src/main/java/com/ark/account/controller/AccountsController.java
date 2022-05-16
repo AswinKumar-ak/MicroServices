@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ark.account.config.AccountsConfig;
-import com.ark.account.config.AccountsProperties;
-import com.ark.account.dto.Customer;
-import com.ark.account.dto.CustomerDetails;
-import com.ark.account.dto.Loans;
-import com.ark.account.model.Accounts;
 import com.ark.account.repository.AccountsRepository;
 import com.ark.account.service.client.CardsFeignClient;
 import com.ark.account.service.client.LoansFeignClient;
+import com.ark.config.AccountsConfig;
+import com.ark.config.AccountsProperties;
+import com.ark.dto.Customer;
+import com.ark.dto.CustomerDetails;
+import com.ark.dto.Loans;
+import com.ark.model.Accounts;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -74,8 +74,8 @@ public class AccountsController {
 	@Retry(name = "retryForCustomerDetails", fallbackMethod = "myCustomerDetailsFallBack")
 	public CustomerDetails myCustomerDeatils(@RequestBody Customer customer) {
 		List<Accounts> accounts = accountsRepository.findByCustomerId(customer.getCustomerId());
-		List<com.ark.account.dto.Loans> loans = loansFeignClient.getLoansDetails(customer);
-		List<com.ark.account.dto.Cards> cards = cardsFeignClient.getCardsDetails(customer);
+		List<com.ark.dto.Loans> loans = loansFeignClient.getLoansDetails(customer);
+		List<com.ark.dto.Cards> cards = cardsFeignClient.getCardsDetails(customer);
 		CustomerDetails customerDetails = new CustomerDetails();
 		customerDetails.setAccounts(accounts);
 		customerDetails.setLoans(loans);
