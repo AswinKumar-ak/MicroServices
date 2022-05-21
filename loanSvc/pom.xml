@@ -9,8 +9,8 @@
 		<version>2.6.0-SNAPSHOT</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.ark</groupId>
-	<artifactId>loansvc</artifactId>
+	<groupId>com.ark.loans</groupId>
+	<artifactId>loansSvc</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>loanSvc</name>
 	<description>Demo project for Spring Boot</description>
