@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ark.cards.config.CardsConfig;
@@ -26,7 +27,7 @@ public class CardsController {
 	CardsConfig cardsConfig;
 
 	@PostMapping("/mycards")
-	public List<Cards> getAccountsDetails(@RequestBody Cards card) {
+	public List<Cards> getAccountsDetails(@RequestHeader("eazybank-correlation-id") String correlationid,@RequestBody Cards card) {
 
 		List<Cards> cards = cardsRepository.findByCustomerId(card.getCustomerId());
 		if (cards != null)

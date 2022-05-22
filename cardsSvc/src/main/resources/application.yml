@@ -16,7 +16,7 @@ spring:
         format_sql: true
     show-sql: true
   application:
-    name: Cards
+    name: cards
   profiles:
     active:
       - prod

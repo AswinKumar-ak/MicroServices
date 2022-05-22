@@ -9,7 +9,7 @@
 		<version>2.6.0-SNAPSHOT</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.ark.account</groupId>
+	<groupId>com.ark.accounts</groupId>
 	<artifactId>accountsSvc</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>accounts</name>
